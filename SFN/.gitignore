@@ -1,0 +1,8 @@
+*.aux
+*.fls
+*.log
+*.fdb_latexmk
+test.py
+acc.py
+keras_csp2nn.py
+csp2nn.md

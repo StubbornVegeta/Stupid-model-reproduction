@@ -1,0 +1,70 @@
+\documentclass[tikz]{standalone}
+\standaloneconfig{border=5pt}
+\usepackage{xeCJK}
+\usetikzlibrary{matrix}
+
+\begin{document}
+  \begin{tikzpicture}
+    [NodeCircle/.style={
+        draw,
+        shape=circle,
+        minimum size=1.2cm,
+        % font=\Large
+    }]
+
+    \node [NodeCircle](input_1) at (-1,5) {$x_1(t)$};
+    \node [NodeCircle](input_n) at (-1,-5) {$x_n(t)$};
+    \node [NodeCircle](layer_1_1) at (2,2.5) {$y_1(t)$};
+    \node [NodeCircle](layer_1_m) at (2,-2.5) {$y_m(t)$};
+    \node [NodeCircle,font=\large](layer_2_1) at (15,2.5) {$f_1$};
+    \node [NodeCircle,font=\large](layer_2_m) at (15,-2.5) {$f_m$};
+    \node [NodeCircle,font=\large](layer_z_1) at (18,2) {$z_1$};
+    \node [NodeCircle,font=\large](layer_z_o) at (18,-2) {$z_o$};
+    \node [right](layer_b_1) at (18,3) {$b_1$};
+    \node [right](layer_b_o) at (18,-3) {$b_o$};
+
+    \matrix (upper) [row sep=-0.5pt,every node/.style={draw,minimum width=5em,minimum height=1.5em}] at (5,2.5) {
+    \node {$y_1(1)$}; \\
+    \node{$...$}; \\
+    \node{$y_1(T)$}; \\
+    };
+    \matrix (lower) [row sep=-0.5pt,every node/.style={draw,minimum width=5em,minimum height=1.5em}] at (5,-2.5) {
+    \node {$y_m(1)$}; \\
+    \node{$...$}; \\
+    \node{$y_m(T)$}; \\
+    };
+
+    \node [draw,rounded corners,rounded corners=5mm,minimum width=6cm,minimum height=2.8cm,](varlog) at (10,0) {$\vec{f}_m = \log\left(\displaystyle\frac{1}{T}\sum_{t=1}^T \left(y_m(t) - \mu_{\vec{y}_m}\right)^2\right)$};
+    \node [draw,rounded corners, rounded corners=4mm, minimum width=2cm,minimum height=2cm](activate) at (21,0) {$\tanh()$};
+    \node [font=\large](out_1) at (24,2) {$\phi_1$};
+    \node [font=\large](out_o) at (24,-2) {$\phi_o$};
+
+    \draw [-latex] (input_1) to node[right]{$w_{11}$} (layer_1_1);
+    \draw [loosely dotted] (input_1) to (input_n);
+    \draw [-latex] (input_n) to node[right]{$w_{nm}$}(layer_1_m);
+    \draw [-latex] (input_1) to node[left]{$w_{1m}$}(layer_1_m);
+    \draw [-latex] (input_n) to node[left]{$w_{n1}$}(layer_1_1);
+    \draw [loosely dotted] (layer_1_1) to (layer_1_m);
+    \draw [loosely dotted] (upper) to (lower);
+    \draw [-latex] (layer_1_1) to node[below]{$\displaystyle\frac{1}{\left\|\vec{w}_1\right\|}$} (upper);
+    \draw [-latex] (layer_1_m) to node[above]{$\displaystyle\frac{1}{\left\|\vec{w}_m\right\|}$} (lower);
+    \draw [-latex, out=0,in=125] (upper.east) to (varlog.north);
+    \draw [-latex, out=0,in=-125] (lower.east) to (varlog.south);
+    \draw [-latex, out=60,in=180] (varlog.north east) to (layer_2_1);
+    \draw [-latex, out=-60,in=180] (varlog.south east) to (layer_2_m);
+    \draw [-latex] (layer_2_1) to node [above] {$v_{11}$} (layer_z_1);
+    \draw [-latex] (layer_2_m) to node [below] {$v_{mo}$} (layer_z_o);
+    \draw [-latex] (layer_2_1) to node [left] {$v_{1o}$} (layer_z_o);
+    \draw [-latex] (layer_2_m) to node [right=1em] {$v_{m1}$} (layer_z_1);
+    \draw [loosely dotted] (layer_2_1) to (layer_2_m);
+    \draw [loosely dotted] (layer_z_1) to (layer_z_o);
+    \draw [-latex] (layer_b_1.west) to (layer_z_1);
+    \draw [-latex] (layer_b_o.west) to (layer_z_o);
+    \draw [-latex,out=0,in=120] (layer_z_1) to (activate.north west);
+    \draw [-latex,out=0,in=-120] (layer_z_o) to (activate.south west);
+    \draw [-latex,out=60,in=180] (activate.north east) to (out_1);
+    \draw [-latex,out=-60,in=180] (activate.south east) to (out_o);
+    \draw [loosely dotted] (out_1) to (out_o);
+
+  \end{tikzpicture}
+\end{document}
