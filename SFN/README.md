@@ -6,6 +6,7 @@
 <img src="./SFN0001-1.png" alt="Structure of the proposed SFN" height="100%" width="100%" />
 </center>
 
+手头只有BCI Competition IV dataset 2a的数据集，所以就用这个数据集测试了。结果感人。
 
 # 第1个人的分类正确率为：0.44
 
