@@ -43,3 +43,79 @@
 # 第9个人的分类正确率为：0.6
 
 ![9](./fig/bp-9.png)
+
+# 第1个人的分类正确率为：0.46
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.32
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.24
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.24
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.24
+
+![1](./fig_Jacobian/Ja-1.png)
+
+# 第1个人的分类正确率为：0.16
+
+![1](./fig_Jacobian/Ja-1.png)
